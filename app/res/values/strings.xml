@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GlideUse</string>
+
+    <string name="simple_test">Simple Test</string>
 </resources>
