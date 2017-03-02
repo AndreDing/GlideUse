@@ -4,6 +4,10 @@ import android.content.Context;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.ialway.android.glideuse.content.diskcache.CustomFileSignature;
+import com.ialway.android.glideuse.content.diskcache.IntegerVersionSignature;
+
+import java.io.File;
 
 /**
  * Created by dingchao on 2017/2/28.
@@ -38,5 +42,21 @@ public class GlideMgr {
     public void sampleLoad(Context context, String imageUrl, float thumbSize, ImageView view) {
 
         Glide.with(context).load(imageUrl).thumbnail(thumbSize).into(view);
+    }
+
+    /**
+     * custom file signature invalidation example
+     */
+    public void loadCacheWithCustom(Context context, File file, ImageView view) {
+
+        Glide.with(context).load(file).signature(new CustomFileSignature(file.getName(), file.lastModified(), file.getAbsolutePath())).into(view);
+    }
+
+    /**
+     * version signature invalidation example
+     */
+    public void loadCacheWithCustom(Context context, String imageUrl, ImageView view, int version) {
+
+        Glide.with(context).load(imageUrl).signature(new IntegerVersionSignature(version)).into(view);
     }
 }

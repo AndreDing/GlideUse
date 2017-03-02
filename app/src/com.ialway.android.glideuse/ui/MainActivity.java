@@ -44,8 +44,11 @@ public class MainActivity extends Activity {
 
     private void initData() {
 
-        GlideType glideType = new GlideType(GlideType.TYPE_SIMPLE, MainApp.shared().getString(R.string.simple_test));
-        mTestListContent.add(glideType);
+        GlideType simpleType = new GlideType(GlideType.TYPE_SIMPLE, MainApp.shared().getString(R.string.simple_test));
+        mTestListContent.add(simpleType);
+
+        GlideType cacheInvalType = new GlideType(GlideType.TYPE_CACHE_INVAL, MainApp.shared().getString(R.string.cache_inval_test));
+        mTestListContent.add(cacheInvalType);
     }
 
     private void fillList() {

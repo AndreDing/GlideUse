@@ -2,4 +2,5 @@
     <string name="app_name">GlideUse</string>
 
     <string name="simple_test">Simple Test</string>
+    <string name="cache_inval_test">Cache Invalidation Test</string>
 </resources>

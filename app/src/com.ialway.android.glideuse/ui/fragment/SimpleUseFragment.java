@@ -1,7 +1,6 @@
 package com.ialway.android.glideuse.ui.fragment;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +8,7 @@ import android.widget.ImageView;
 
 import com.ialway.android.glideuse.R;
 import com.ialway.android.glideuse.mgr.GlideMgr;
+import com.ialway.android.glideuse.ui.base.BaseFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -16,7 +16,7 @@ import butterknife.ButterKnife;
 /**
  * Created by dingchao on 2017/3/1.
  */
-public class SimpleUseFragment extends Fragment {
+public class SimpleUseFragment extends BaseFragment {
 
     View mRoot;
 
@@ -30,9 +30,9 @@ public class SimpleUseFragment extends Fragment {
     ImageView mSampleThumbnailIv;
 
     public static SimpleUseFragment newInstance(Bundle bundle) {
-        SimpleUseFragment skinMgrFragment = new SimpleUseFragment();
-        skinMgrFragment.setArguments(bundle);
-        return skinMgrFragment;
+        SimpleUseFragment simpleUseFragment = new SimpleUseFragment();
+        simpleUseFragment.setArguments(bundle);
+        return simpleUseFragment;
     }
 
     @Override

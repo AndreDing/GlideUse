@@ -11,6 +11,7 @@ public class GlideType implements Parcelable {
     public static final String INTENT_EXTRA_GLIDETYPE = "GlideType";
 
     public static final int TYPE_SIMPLE = 0;
+    public static final int TYPE_CACHE_INVAL = 1;
 
     public int mType;
     public String mName;

@@ -1,12 +1,13 @@
 package com.ialway.android.glideuse.ui.activity;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 
 import com.ialway.android.glideuse.R;
 import com.ialway.android.glideuse.model.GlideType;
+import com.ialway.android.glideuse.ui.base.BaseFragment;
+import com.ialway.android.glideuse.ui.fragment.CacheInvalidationTestFragment;
 import com.ialway.android.glideuse.ui.fragment.SimpleUseFragment;
 
 /**
@@ -26,10 +27,13 @@ public class SubMainActivity extends FragmentActivity {
     }
 
     public void fillFragment(GlideType glideType) {
-        Fragment testFragment = null;
+        BaseFragment testFragment = null;
         switch (glideType.getType()) {
             case GlideType.TYPE_SIMPLE:
                 testFragment = SimpleUseFragment.newInstance(new Bundle());
+                break;
+            case GlideType.TYPE_CACHE_INVAL:
+                testFragment = CacheInvalidationTestFragment.newInstance(new Bundle());
                 break;
         }
         FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
