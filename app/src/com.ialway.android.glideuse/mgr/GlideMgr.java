@@ -4,6 +4,7 @@ import android.content.Context;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.ialway.android.glideuse.content.diskcache.CustomFileSignature;
 import com.ialway.android.glideuse.content.diskcache.IntegerVersionSignature;
 
@@ -58,5 +59,13 @@ public class GlideMgr {
     public void loadCacheWithCustom(Context context, String imageUrl, ImageView view, int version) {
 
         Glide.with(context).load(imageUrl).signature(new IntegerVersionSignature(version)).into(view);
+    }
+
+    /**
+     * no disk cache example
+     */
+    public void loadWithNoDiskCache(Context context, String imageUrl, ImageView view) {
+
+        Glide.with(context).load(imageUrl).diskCacheStrategy(DiskCacheStrategy.NONE).into(view);
     }
 }
