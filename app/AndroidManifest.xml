@@ -27,6 +27,10 @@
             android:name="com.ialway.android.glideuse.content.module.CustomSimpleGlideModule"
             android:value="GlideModule"
             />
+
+        <meta-data
+            android:name="com.bumptech.glide.integration.volley.VolleyGlideModule"
+            android:value="GlideModule" />
     </application>
 
 </manifest>
